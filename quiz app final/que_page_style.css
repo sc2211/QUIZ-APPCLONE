@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: gray;
+    text-align: center;
+}
+/*-------- style for main box------------------ */
+
+.container {
+    height: 40rem;
+    width: 45rem;
+    border: 2px solid gray;
+    box-shadow: 5px 10px 10px gray;
+    display: flex;
+    justify-content: center;
+  /*-------- to align timer and score left and right------------------ */
+}
+.time_score{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5rem;
+    padding-right:5rem;
+}
+ /*-------- to design circle for timer------------------ */
+.timer{
+    height: 50px;
+    width: 50px;
+    padding: 13px;
+    border: 5px solid  rgb(27, 145, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  rgb(27, 145, 255);
+
+}
+ /*-------- to center the containt of score------------------ */
+.score{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+}
+ /*-------- to design the cirle of que number------------------ */
+.que_no{  height: 50px;
+    width: 50px;
+    padding: 13px;
+    background-color: white;
+    border:5px solid rgb(27, 145, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: rgb(27, 145, 255);
+
+}
+ /*-------- question box------------------ */
+.que_box{
+    width: 30rem;
+    height: 5rem;
+    border: 2px solid gray;
+    color: rgba(0, 0, 0, 0.793);
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 5px;
+}
+ /*-------- to design question box------------------ */
+.box{ display: flex;
+    justify-content: center;
+    position: relative;
+}
+ /*-------- to disable radio button circle------------------ */
+input[type="radio"]
+{
+    display: none;
+   
+}
+ /*-------- to design option button------------------ */
+label{
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: large;
+    padding:5px 60px 5px 60px;
+    background-color:  rgba(27, 145, 255,0.3);
+    box-shadow: 5px 5px 5px gray;
+    
+
+
+}
+ /*-------- to heighlight the checked option------------------ */
+input[type="radio"]:checked + label
+{
+    background-color: rgb(27, 145, 255);
+    color: white;
+}
+ /*-------- to design option in 2*2 matrix------------------ */
+.buttons {
+    margin-top: px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+ /*-------- to design next button------------------ */
+button {
+    padding: 5px 20px;
+    background-color: rgb(27, 145, 255);
+    color:white;
+    border-radius: 3rem;
+    border-color: rgb(27, 145, 255);
+    box-shadow: 5px 5px 5px gray;
+    height: 2rem;
+}

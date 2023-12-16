@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ----------parent container---------- -->
+    <div class="container">
+        <!-- child container -->
+        <div class="main">
+            <div class="logo">
+                <img style="height: 120px; width: 120px;" src="./img/logo.png">
+            </div>
+            <div style="text-align: center;" class="welcome_note">
+                <h1 style="color: rgb(27, 145, 255);">Hello user!</h1>
+                <h5>Enter your name to continue the Quiz.</h5>
+            </div>
+            <div class="input">
+                <input id="Name" type="text" value="" placeholder="ENTER YOUR NAME....">
+                <BUTTon onclick="queType()" style=" background-color:  rgb(27, 145, 255);
+                color: white;
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px gray;
+                margin-left: 1rem;
+                width: 6rem;
+                height: 2rem;">ENTER</BUTTon>
+                <p style="color: red;" id="no_name"></p>
+
+                <p>You'll have 10 seconds to answer each questions</p>
+                <hr>
+            </div>
+            <div class="sel_cat">
+                <h1 style="color: rgb(27, 145, 255);">Select Category</h1>
+                <p style="color: red;" id="no_type"></p>
+                <div class="button">
+
+                    <input class="option" type="radio" name="option" value="1" id="option1"><label for="option1">Pipes
+                        And Cisterns</label>
+                    <input class="option" type="radio" name="option" value="2" id="option2"><label
+                        for="option2">Probability</label>
+                    <input class="option" type="radio" name="option" value="3" id="option3"><label for="option3">Problem
+                        On Ages</label>
+                    <input class="option" type="radio" name="option" value="4" id="option4"><label for="option4">Profit
+                        And Loss</label>
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            const option = document.querySelectorAll('.option')
+            // //////////function to get question type/////////
+            const queType = () => {
+
+
+                option.forEach(
+                    (input) => {
+                        if (input.checked) {
+                            localStorage.setItem('type', input.value);
+                            let question_Type = localStorage.getItem('type');
+                            console.log(question_Type)
+                        }
+                    }
+                )
+            
+                let name = document.getElementById("Name").value;
+                name=localStorage.setItem('Name', name);
+                const check =localStorage.getItem('Name');
+              
+
+
+                if(check!=""){
+                   const Q = localStorage.getItem('type');
+                   
+                if(Q!=""){
+                    window.location.href = 'que_page.html';
+                }
+                else{
+                    document.getElementById("no_name").innerHTML=("");
+                    document.getElementById("no_type").innerHTML=("Please Select Question Type");
+                }
+                }
+                else{
+                    document.getElementById("no_name").innerHTML=("Please Enter Your Name.");
+                }
+                return ;
+            }
+
+            localStorage.setItem('Name', name);
+           const Q= localStorage.setItem('type',"");
+        </script>
+       
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            color: gray;
+            text-align: center;
+
+        }
+/*-------- style for main box------------------ */
+        .container {
+            height: 40rem;
+            width: 45rem;
+            border: 2px solid gray;
+            box-shadow: 5px 10px 10px gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+/*-------- style for star again and go to home button------------------ */
+        button {
+            background-color: rgb(27, 145, 255);
+            color: white;
+            border-radius: 2rem;
+            border-color: rgb(27, 145, 255);
+            box-shadow: 5px 5px 5px gray;
+            height: 3rem;
+            width: 10rem;
+            cursor: pointer;
+        }
+
+        .button {
+            display: flex;
+
+
+        }
+
+        b {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <!-----------result------------------>
+            <div class="result">
+                <h1 style="color:  rgb(27, 145, 255);">Quiz Result</h1>
+                <b id="Name">ABCD</b>
+                <span>your result is:</span>
+                <p>Total Time Taken:<b id="time_taken">110</b> Seconds</p>
+                <p>Total questions:<b>10</b></p>
+                <p>Attempt:<b id=">Attempt">10</b></p>
+                <p>Correct:<b id="Correct">3</b></p>
+                <p>Wrong:<b id="wrong">7</b></p>
+                <p>Percentage:<b id="Percentage">30.00</b><b>%</b></p>
+            </div>
+            <!------------------ button --------------------->
+            <div class="button">
+                <button onclick="startAgain()">Start Again</button>
+                <button onclick="go_to_home()" style="margin-left: 30px;">Go To Home</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let Time = localStorage.getItem('time');
+        let Name = localStorage.getItem('Name');
+        let correct = localStorage.getItem('Correct');
+        let wrong = localStorage.getItem('Wrong');
+        //////////////////function to show result//////////////
+        result = () => {
+            document.getElementById("time_taken").innerText =Time;
+            document.getElementById("Name").innerText = Name;
+            document.getElementById("Correct").innerText = correct;
+            document.getElementById("wrong").innerText = wrong;
+            document.getElementById("Percentage").innerText = correct * 10;
+
+        }
+        ////////////function for Go to home button///////////
+        const go_to_home = () => {
+            window.location.href = 'index.html';
+            window.localStorage.clear();
+        }
+        ////////////function for Start Again button///////////////
+        const startAgain = () => {
+            window.location.href = 'que_page.html';
+            window.localStorage.removeItem('Time');
+            window.localStorage.removeItem('correct');
+            window.localStorage.removeItem('wrong');
+
+        }
+
+        result();
+    </script>
+</body>
+
+</html>

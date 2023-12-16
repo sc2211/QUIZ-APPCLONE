@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: gray;
+}
+/*-------- main box------------------ */
+.container {
+    height: 40rem;
+    width: 45rem;
+    border: 2px solid gray;
+    box-shadow: 5px 10px 10px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*-------- style for input box------------------ */
+input[type=text] {
+    padding-left: 10px;
+    width: 75%;
+    height: 2rem;
+    border-radius: 8px;
+    border-color: gray;
+    box-shadow: -2px -2px 2px rgb(182, 179, 179) inset;
+    s
+}
+/*-------- to disable radio button circle------------------ */
+input[type="radio"] {
+
+   display: none;
+
+}
+/*-------- to style label of radio button------------------ */
+label {
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: large;
+    padding: 5px 60px 5px 60px;
+    background-color: rgba(27, 145, 255, 0.3);
+    box-shadow: 5px 5px 5px gray;
+
+
+
+}
+/*-------- to change the color after selection------------------ */
+input[type="radio"]:checked+label {
+    background-color: rgb(27, 145, 255);
+    color: white;
+}
+/*-------- to style enter button------------------ */
+
+button {
+    background-color: rgba(27, 145, 255, 0.2);
+    color: gray;
+    border-radius: 5px;
+    border-color: rgb(27, 145, 255);
+    box-shadow: 5px 5px 5px gray;
+    height: 2rem;
+
+}
+/*-------- to set the options in grid (2*2)------------------ */
+.button {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+/*-------- to align all item in senter------------------ */
+.main {
+    text-align: center;
+}
